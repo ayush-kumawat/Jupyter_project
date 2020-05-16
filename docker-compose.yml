@@ -1,0 +1,14 @@
+version: '3'
+volumes:
+  book_data:
+services:
+  jupybook:
+    image: "booki:v3"
+    ports:
+      - 8888:8888
+    volumes:
+      - /tmp/.X11-unix/:/tmp/.X11-unix/
+      - book_data:/book
+    environment:
+      DISPLAY: $DISPLAY
+
