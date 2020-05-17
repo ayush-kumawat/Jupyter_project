@@ -1,0 +1,14 @@
+version: '3'
+volumes:
+  book_data_8:
+services:
+  jupybook:
+    image: "booki8:v2"
+    ports:
+      - 8888:8888
+    volumes:
+      - /tmp/.X11-unix/:/tmp/.X11-unix/
+      - book_data_8:/book
+    environment:
+      DISPLAY: $DISPLAY
+
